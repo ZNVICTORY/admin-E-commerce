@@ -1,0 +1,23 @@
+.navbar-header{
+  z-index: 1000;
+  border:0 solid #000;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+  height: 60px;
+}
+.navbar-title{
+  color: #fff;
+  width: 260px;
+  height: 60px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 60px;
+  background-color: #32323a;
+  outline: none;
+}
+.navbar-login{
+  position: fixed;
+  top:3px;
+  right: 10px;
+}

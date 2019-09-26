@@ -1,0 +1,40 @@
+ .dash_content{
+  margin-top: 30px;
+}
+.dash_item {
+  padding: 0 30px 0 0;
+}
+.color-box{
+  height: 160px;
+  opacity: 0.9;
+  display: block;
+  text-align: center;
+  color: #fff;
+  transition: all .3s ease-in-out;
+}
+.color-box:hover, .color-box:active{
+  color: #000;
+  transform:scale(1.1)
+}
+.count {
+  line-height: 80px;
+  height: 80px;
+  font-size: 50px;
+}
+p{
+  margin: 0 0 10px 0;
+}
+.desc {
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+}
+.brown{
+  background-color: #f0ad4e;
+}
+.green{
+  background-color: #5cb85c;
+}
+.blue{
+  background-color: #4cb1cf;
+}
