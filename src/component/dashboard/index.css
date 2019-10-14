@@ -1,0 +1,11 @@
+.content{
+  position: absolute;
+  margin: 0 0;
+  padding: 30px 30px;
+  top: 60px;
+  left: 260px;
+  bottom: 0;
+  right: 0;
+  /* background-color: rgb(221, 221, 221); */
+  height: auto;
+}
