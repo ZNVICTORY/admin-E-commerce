@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
-import Layout from '../../component/layout'
-import DashBoard from '../../component/dashboard'
-class Home extends React.Component{
+/* eslint-disable no-useless-constructor */
+import React, { Component } from 'react'
 
+class Home extends Component{
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
-       <Fragment>
-         <Layout />
-         <DashBoard />
-       </Fragment>
+      <>
+        {this.props.children}
+      </>
     )
   }
 }

@@ -32,8 +32,7 @@ class PageContent extends React.Component{
                    <span>订单总数</span>
                  </p>
               </a>
-        </Col>
-        
+        </Col>   
       </Row>
     )
   }
