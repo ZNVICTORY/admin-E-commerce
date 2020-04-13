@@ -1,11 +1,11 @@
 import React from 'react'
-import { Form, Input, Select,Button } from 'antd'
-import { connect} from 'react-redux'
-import { addCateSort} from '../../store/product/index' 
+import { Form, Input, Select, Button } from 'antd'
+import { connect } from 'react-redux'
+import { addCateSort } from '../../store/reducers/product'
 
 @connect(
   state => state.product,
-  {addCateSort}
+  { addCateSort }
 )
 class AddCate extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class AddCate extends React.Component {
     }
   }
 
-  handleChange(key, v){
+  handleChange(key, v) {
     this.setState({
       [key]: v.target.value
     })
@@ -28,19 +28,19 @@ class AddCate extends React.Component {
     const { Option } = Select
     return (
       <div>
-         <Form labelCol={{ span: 5 }} wrapperCol={{ span: 8}}>
-           <Item label="所属品类">
-             <Select defaultValue="所有">
-               <Option value="all">所有</Option>
-             </Select>
-           </Item>
-            <Item label="品类名称">
-              <Input placeholder="请输入品类名称" onChange={(v) => this.handleChange('sort', v)} />
-            </Item>
-            <Item style={{textAlign:'center', marginLeft: 100}}>
-              <Button type="primary" onClick={() => this.handleSubmit()}>提交</Button>
-            </Item>
-         </Form>
+        <Form labelCol={{ span: 5 }} wrapperCol={{ span: 8 }}>
+          <Item label="所属品类">
+            <Select defaultValue="所有">
+              <Option value="all">所有</Option>
+            </Select>
+          </Item>
+          <Item label="品类名称">
+            <Input placeholder="请输入品类名称" onChange={(v) => this.handleChange('sort', v)} />
+          </Item>
+          <Item style={{ textAlign: 'center', marginLeft: 100 }}>
+            <Button type="primary" onClick={() => this.handleSubmit()}>提交</Button>
+          </Item>
+        </Form>
       </div>
     )
   }

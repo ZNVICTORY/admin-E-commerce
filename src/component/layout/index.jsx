@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react'
+import React, { Fragment } from 'react'
 import NavTop from '../nav-top/index'
 import NavSide from '../nav-side/index'
 

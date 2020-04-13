@@ -1,15 +1,15 @@
 import { Upload, Icon, Modal } from 'antd';
-import React from 'react'
+import React, { Component } from 'react'
 function getBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
+    reader.onload = () => resolve(reader.result)
     reader.onerror = error => reject(error);
   });
 }
 
-class PicturesWall extends React.Component {
+class PicturesWall extends Component {
   state = {
     previewVisible: false,
     previewImage: '',
@@ -73,7 +73,7 @@ class PicturesWall extends React.Component {
     return (
       <div className="clearfix">
         <Upload
-          disabled = {this.props.off}
+          disabled={this.props.off}
           action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
           listType="picture-card"
           fileList={fileList}

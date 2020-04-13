@@ -2,7 +2,7 @@ import React, { Fragment} from 'react'
 import { Form, Input, Row, Col, Button } from 'antd'
 import PicturesWall from './PicturesWall'
 import { connect } from 'react-redux'
-import { increaseProduct} from '../../store/product/index'
+import { increaseProduct} from '../../store/reducers/product'
 
 @connect(
   state => state.product,

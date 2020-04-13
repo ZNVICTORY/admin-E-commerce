@@ -1,21 +1,21 @@
 import React from 'react'
-import {Table} from 'antd'
+import { Table } from 'antd'
 import { connect } from 'react-redux'
-import { getUserList} from '../../store/user/index'
+import { getUserList } from '../../store/reducers/user/'
 
 @connect(
   state => state.user,
-  {getUserList}
+  { getUserList }
 )
 class UserList extends React.Component {
 
   componentWillMount() {
     this.props.getUserList()
   }
-  render () {
+  render() {
     const column = [
       {
-        title:  'Id',
+        title: 'Id',
         dataIndex: 'id',
         key: 'id',
         width: 50
@@ -40,18 +40,18 @@ class UserList extends React.Component {
       {
         title: '注册时间',
         dataIndex: 'time',
-        key:'time'
+        key: 'time'
       }
     ]
-    
-    return  this.props.data ? (
+
+    return this.props.data ? (
       <div>
-       <Table
-         columns={column}
-         dataSource={this.props.data}
-       />
+        <Table
+          columns={column}
+          dataSource={this.props.data}
+        />
       </div>
-    ): null
+    ) : null
   }
 }
 

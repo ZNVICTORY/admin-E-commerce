@@ -1,11 +1,11 @@
-import React from 'react' 
-import { Table, Button, Divider, Modal, Input, Row, Col  } from 'antd'
-import { getCategory, updateCategory} from '../../store/product/index'
+import React from 'react'
+import { Table, Button, Divider, Modal, Input, Row, Col } from 'antd'
+import { getCategory, updateCategory } from '../../store/reducers/product'
 import { connect } from 'react-redux'
 
 @connect(
-  state => state.product, 
-  {getCategory, updateCategory}
+  state => state.product,
+  { getCategory, updateCategory }
 )
 class Category extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Category extends React.Component {
     }
   }
   componentWillMount() {
-     this.props.getCategory()
+    this.props.getCategory()
   }
   handleModle(id) {
     this.setState({
@@ -38,16 +38,16 @@ class Category extends React.Component {
     this.props.getCategory()
     this.handleCancel()
   }
-  changeState(key,v) {
+  changeState(key, v) {
     this.setState({
-       [key] : v.target.value
+      [key]: v.target.value
     })
   }
 
   render() {
     const column = [
       {
-        title:  '品类ID',
+        title: '品类ID',
         dataIndex: 'id',
         key: 'id',
         width: 150
@@ -74,26 +74,26 @@ class Category extends React.Component {
     return this.props.data.length > 0 ? (
       <div>
         <Row >
-          <Col offset={21} span={3}> 
-             <Button type="primary" onClick={()=> this.props.history.push('/product-category/add')}>添加品类</Button>
+          <Col offset={21} span={3}>
+            <Button type="primary" onClick={() => this.props.history.push('/product-category/add')}>添加品类</Button>
           </Col>
         </Row>
         <p>当前商品ID：{this.state.id} </p>
 
-        <Table 
+        <Table
           columns={column}
           dataSource={this.props.data}
         />
-         <Modal
-            title="修改名称"
-            visible={this.state.visible}
-            onOk={() => this.handleOk()}
-            onCancel={() => this.handleCancel()}
-          >
-            <Input defaultValue={this.state.info} onChange={(v) => this.changeState('info',v )} />
-          </Modal>
+        <Modal
+          title="修改名称"
+          visible={this.state.visible}
+          onOk={() => this.handleOk()}
+          onCancel={() => this.handleCancel()}
+        >
+          <Input defaultValue={this.state.info} onChange={(v) => this.changeState('info', v)} />
+        </Modal>
       </div>
-    ): null
+    ) : null
   }
 }
 

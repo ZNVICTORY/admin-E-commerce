@@ -1,11 +1,11 @@
-import React from 'react' 
-import { connect} from 'react-redux'
-import { Table , Avatar, Form, Input} from 'antd'
-import { getOrderDetailById } from '../../store/order/order'
+import React from 'react'
+import { connect } from 'react-redux'
+import { Table, Avatar, Form, Input } from 'antd'
+import { getOrderDetailById } from '../../store/reducers/order'
 
 @connect(
   state => state.order,
-  {getOrderDetailById}
+  { getOrderDetailById }
 )
 class OrderItem extends React.Component {
   componentWillMount() {
@@ -36,43 +36,43 @@ class OrderItem extends React.Component {
       {
         title: '数量',
         key: 'allNum',
-        dataIndex:'allNum'
+        dataIndex: 'allNum'
       },
       {
         title: '合计',
         key: 'allPrice',
         dataIndex: 'allPrice'
       },
-     
+
     ]
     const Item = Form.Item
     return this.props.data && this.props.info ? (
       <div>
-           <Form labelCol={{ span: 5 }} wrapperCol={{ span: 8}}>
-              <Item label="订单号：">
-                <Input  value={this.props.info.order}  />
-              </Item>
-              <Item label="创建时间：">
-                <Input  value={this.props.info.create_time}   />
-              </Item>
-              <Item label="收件人：">
-                <Input  value={this.props.info.recipient}   />
-              </Item>
-              <Item label="订单状态：">
-                <Input  value={this.props.info.status}  />
-              </Item>
-              <Item label="支付方式：">
-                <Input  value={this.props.info.payWay}/>
-              </Item>
-              <Item label="订单金额：">
-                <Input  value={this.props.info.all_price} suffix="RMB" />
-              </Item>
-          </Form>
-        <Table 
+        <Form labelCol={{ span: 5 }} wrapperCol={{ span: 8 }}>
+          <Item label="订单号：">
+            <Input value={this.props.info.order} />
+          </Item>
+          <Item label="创建时间：">
+            <Input value={this.props.info.create_time} />
+          </Item>
+          <Item label="收件人：">
+            <Input value={this.props.info.recipient} />
+          </Item>
+          <Item label="订单状态：">
+            <Input value={this.props.info.status} />
+          </Item>
+          <Item label="支付方式：">
+            <Input value={this.props.info.payWay} />
+          </Item>
+          <Item label="订单金额：">
+            <Input value={this.props.info.all_price} suffix="RMB" />
+          </Item>
+        </Form>
+        <Table
           columns={column}
-          dataSource={this.props.data} 
+          dataSource={this.props.data}
         />
-      </div>  
+      </div>
     ) : null
   }
 }

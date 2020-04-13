@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, Form, Input, Select, Button } from 'antd'
 import { connect } from 'react-redux'
-import {getOrderLsit, getOrderById } from '../../store/order/order'
+import {getOrderLsit, getOrderById } from '../../store/reducers/order'
 
 @connect(
   state => state.order,

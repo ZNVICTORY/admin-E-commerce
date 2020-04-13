@@ -15,7 +15,7 @@ axios.interceptors.response.use(response => response, err => Promise.resolve(err
 
 // 检查状态码
 function checkStatus(res) {
-  if(res.status === 200 || res.status === 304) {
+  if (res.status === 200 || res.status === 304) {
     return res.data
   }
   return {
@@ -26,13 +26,13 @@ function checkStatus(res) {
 }
 // 检查code值
 function checkCode(res) {
-  if(res.code === 0) {
+  if (res.code === 0) {
     throw new Error(res.msg)
   }
   return res
 }
 // 根据环境，设置baseURL
-process.env.NODE_ENV === 'devlopment' ? axios.defaults.baseUrl = "http://localhost:3000" : axios.defaults.baseUrl=""
+process.env.NODE_ENV === 'devlopment' ? axios.defaults.baseUrl = "http://localhost:3000" : axios.defaults.baseUrl = ""
 /**
  * 封装get请求
  * @param {string} url 
@@ -40,7 +40,7 @@ process.env.NODE_ENV === 'devlopment' ? axios.defaults.baseUrl = "http://localho
  * @return {object}
  */
 export const httpGet = (url, params) => {
-  if(!url) return null
+  if (!url) return null
   return axios({
     method: 'get',
     url,
@@ -55,7 +55,7 @@ export const httpGet = (url, params) => {
  * @return {object}
  */
 export const httpPost = (url, data) => {
-  if(!url) return null
+  if (!url) return null
   return axios({
     method: 'post',
     url,
